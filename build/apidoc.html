@@ -1,0 +1,2309 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/whitequark/ipaddr.js#readme"
+
+    >ipaddr.js (v1.3.0)</a>
+</h1>
+<h4>A library for manipulating IPv4 and IPv6 addresses in JavaScript.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipaddr.js">module ipaddr.js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv4
+            <span class="apidocSignatureSpan">(octets)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv6
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.fromByteArray">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>fromByteArray
+            <span class="apidocSignatureSpan">(bytes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.isValid">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>isValid
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.js.IPv4">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>js.IPv4
+            <span class="apidocSignatureSpan">(octets)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.js.IPv6">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>js.IPv6
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.parse">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>parse
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.parseCIDR">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>parseCIDR
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.process">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>process
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.subnetMatch">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>subnetMatch
+            <span class="apidocSignatureSpan">(address, rangeList, defaultName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipaddr.js.</span>js.IPv4.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipaddr.js.</span>js.IPv6.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipaddr.js.</span>js.ipaddr</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipaddr.js.IPv4">module ipaddr.js.IPv4</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.IPv4">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv4
+            <span class="apidocSignatureSpan">(octets)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.isIPv4">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>isIPv4
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.isValid">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>isValid
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.isValidFourPartDecimal">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>isValidFourPartDecimal
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.parse">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>parse
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.parseCIDR">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>parseCIDR
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.parser">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>parser
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipaddr.js.IPv4.prototype">module ipaddr.js.IPv4.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.kind">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>kind
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.match">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>match
+            <span class="apidocSignatureSpan">(other, cidrRange)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.prefixLengthFromSubnetMask">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>prefixLengthFromSubnetMask
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.range">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>range
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.toByteArray">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>toByteArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.toIPv4MappedAddress">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>toIPv4MappedAddress
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv4.prototype.toString">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>SpecialRanges</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipaddr.js.IPv6">module ipaddr.js.IPv6</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.IPv6">
+            function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv6
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.isIPv6">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>isIPv6
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.isValid">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>isValid
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.parse">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>parse
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.parseCIDR">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>parseCIDR
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.parser">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>parser
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipaddr.js.IPv6.prototype">module ipaddr.js.IPv6.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.isIPv4MappedAddress">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>isIPv4MappedAddress
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.kind">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>kind
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.match">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>match
+            <span class="apidocSignatureSpan">(other, cidrRange)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.range">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>range
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.toByteArray">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toByteArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.toIPv4Address">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toIPv4Address
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.toNormalizedString">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toNormalizedString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.IPv6.prototype.toString">
+            function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>SpecialRanges</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipaddr.js.ipaddr">module ipaddr.js.ipaddr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.IPv4">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>IPv4
+            <span class="apidocSignatureSpan">(octets)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.IPv6">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>IPv6
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.fromByteArray">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>fromByteArray
+            <span class="apidocSignatureSpan">(bytes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.isValid">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>isValid
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.parse">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>parse
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.parseCIDR">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>parseCIDR
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.process">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>process
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipaddr.js.ipaddr.subnetMatch">
+            function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>subnetMatch
+            <span class="apidocSignatureSpan">(address, rangeList, defaultName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipaddr.js" id="apidoc.module.ipaddr.js">module ipaddr.js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4" id="apidoc.element.ipaddr.js.IPv4">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv4
+        <span class="apidocSignatureSpan">(octets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv4(octets) {
+  var octet, _i, _len;
+  if (octets.length !== 4) {
+    throw new Error(&#x22;ipaddr: ipv4 octet count should be 4&#x22;);
+  }
+  for (_i = 0, _len = octets.length; _i &#x3c; _len; _i++) {
+    octet = octets[_i];
+    if (!((0 &#x3c;= octet &#x26;&#x26; octet &#x3c;= 255))) {
+      throw new Error(&#x22;ipaddr: ipv4 octet should fit in 8 bits&#x22;);
+    }
+  }
+  this.octets = octets;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  IPv6.prototype.toIPv4Address = function() {
+    var high, low, _ref;
+    if (!this.isIPv4MappedAddress()) {
+      throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+    }
+    _ref = this.parts.slice(-2), high = _ref[0], low = _ref[1];
+    return new ipaddr.<span class="apidocCodeKeywordSpan">IPv4</span>([high &#x3e;&#x3e; 8, high &#x26; 0xff, low &#x3e;&#x3e; 8
+, low &#x26; 0xff]);
+  };
+
+  return IPv6;
+
+})();
+
+ipv6Part = &#x22;(?:[0-9a-f]+::?)+&#x22;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6" id="apidoc.element.ipaddr.js.IPv6">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv6
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv6(parts) {
+  var i, part, _i, _j, _len, _ref;
+  if (parts.length === 16) {
+    this.parts = [];
+    for (i = _i = 0; _i &#x3c;= 14; i = _i += 2) {
+      this.parts.push((parts[i] &#x3c;&#x3c; 8) | parts[i + 1]);
+    }
+  } else if (parts.length === 8) {
+    this.parts = parts;
+  } else {
+    throw new Error(&#x22;ipaddr: ipv6 part count should be 8 or 16&#x22;);
+  }
+  _ref = this.parts;
+  for (_j = 0, _len = _ref.length; _j &#x3c; _len; _j++) {
+    part = _ref[_j];
+    if (!((0 &#x3c;= part &#x26;&#x26; part &#x3c;= 0xffff))) {
+      throw new Error(&#x22;ipaddr: ipv6 part should fit in 16 bits&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ipaddr.fromByteArray = function(bytes) {
+  var length;
+  length = bytes.length;
+  if (length === 4) {
+    return new ipaddr.IPv4(bytes);
+  } else if (length === 16) {
+    return new ipaddr.<span class="apidocCodeKeywordSpan">IPv6</span>(bytes);
+  } else {
+    throw new Error(&#x22;ipaddr: the binary input is neither an IPv6 nor IPv4 address&#x22;);
+  }
+};
+
+ipaddr.process = function(string) {
+  var addr;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.fromByteArray" id="apidoc.element.ipaddr.js.fromByteArray">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>fromByteArray
+        <span class="apidocSignatureSpan">(bytes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromByteArray = function (bytes) {
+  var length;
+  length = bytes.length;
+  if (length === 4) {
+    return new ipaddr.IPv4(bytes);
+  } else if (length === 16) {
+    return new ipaddr.IPv6(bytes);
+  } else {
+    throw new Error(&#x22;ipaddr: the binary input is neither an IPv6 nor IPv4 address&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The `fromByteArray()` method will take an array and create an appropriate IPv4 or IPv6 object
+if the input satisfies the requirements. For IPv4 it has to be an array of four 8-bit values,
+while for IPv6 it has to be an array of sixteen 8-bit values.
+
+For example:
+```js
+var addr = ipaddr.<span class="apidocCodeKeywordSpan">fromByteArray</span>([0x7f, 0, 0, 1]);
+addr.toString(); // =&#x3e; &#x22;127.0.0.1&#x22;
+```
+
+or
+
+```js
+var addr = ipaddr.fromByteArray([0x20, 1, 0xd, 0xb8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.isValid" id="apidoc.element.ipaddr.js.isValid">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>isValid
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValid = function (string) {
+  return ipaddr.IPv6.isValid(string) || ipaddr.IPv4.isValid(string);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var bytes = ipaddr.parse(&#x27;2a00:1450:8007::68&#x27;).toByteArray(); // ipv6.google.com
+bytes // =&#x3e; [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, &#x3c;zeroes...&#x3e;, 0x00, 0x68 ]
+```
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.<span class="apidocCodeKeywordSpan">isValid</span>(string)` can be used to check if the string is a valid address
+for particular protocol, and `ipaddr.IPvX.parse(string)` is the error-throwing parser.
+
+`ipaddr.IPvX.isValid(string)` uses the same format for parsing as the POSIX `inet_ntoa` function, which accepts unusual formats
+like `0xc0.168.1.1` or `0x10000000`. The function `ipaddr.IPv4.isValidFourPartDecimal(string)` validates the IPv4 address and also
+ ensures that it is written in four-part decimal format.
+
+[IPv6 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L186
+[IPv4 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L71
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.js.IPv4" id="apidoc.element.ipaddr.js.js.IPv4">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>js.IPv4
+        <span class="apidocSignatureSpan">(octets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv4(octets) {
+  var octet, _i, _len;
+  if (octets.length !== 4) {
+    throw new Error(&#x22;ipaddr: ipv4 octet count should be 4&#x22;);
+  }
+  for (_i = 0, _len = octets.length; _i &#x3c; _len; _i++) {
+    octet = octets[_i];
+    if (!((0 &#x3c;= octet &#x26;&#x26; octet &#x3c;= 255))) {
+      throw new Error(&#x22;ipaddr: ipv4 octet should fit in 8 bits&#x22;);
+    }
+  }
+  this.octets = octets;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.js.IPv6" id="apidoc.element.ipaddr.js.js.IPv6">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>js.IPv6
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv6(parts) {
+  var i, part, _i, _j, _len, _ref;
+  if (parts.length === 16) {
+    this.parts = [];
+    for (i = _i = 0; _i &#x3c;= 14; i = _i += 2) {
+      this.parts.push((parts[i] &#x3c;&#x3c; 8) | parts[i + 1]);
+    }
+  } else if (parts.length === 8) {
+    this.parts = parts;
+  } else {
+    throw new Error(&#x22;ipaddr: ipv6 part count should be 8 or 16&#x22;);
+  }
+  _ref = this.parts;
+  for (_j = 0, _len = _ref.length; _j &#x3c; _len; _j++) {
+    part = _ref[_j];
+    if (!((0 &#x3c;= part &#x26;&#x26; part &#x3c;= 0xffff))) {
+      throw new Error(&#x22;ipaddr: ipv6 part should fit in 16 bits&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.parse" id="apidoc.element.ipaddr.js.parse">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>parse
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string) {
+  if (ipaddr.IPv6.isValid(string)) {
+    return ipaddr.IPv6.parse(string);
+  } else if (ipaddr.IPv4.isValid(string)) {
+    return ipaddr.IPv4.parse(string);
+  } else {
+    throw new Error(&#x22;ipaddr: the address has neither IPv6 nor IPv4 format&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A `match(range, bits)` method can be used to check if the address falls into a
+certain CIDR range.
+Note that an address can be (obviously) matched only against an address of the same type.
+
+For example:
+
+```js
+var addr = ipaddr.<span class="apidocCodeKeywordSpan">parse</span>(&#x22;2001:db8:1234::1&#x22;);
+var range = ipaddr.parse(&#x22;2001:db8::&#x22;);
+
+addr.match(range, 32); // =&#x3e; true
+```
+
+Alternatively, `match` can also be called as `match([range, bits])`. In this way,
+it can be used together with the `parseCIDR(string)` method, which parses an IP
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.parseCIDR" id="apidoc.element.ipaddr.js.parseCIDR">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>parseCIDR
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseCIDR = function (string) {
+  var e;
+  try {
+    return ipaddr.IPv6.parseCIDR(string);
+  } catch (_error) {
+    e = _error;
+    try {
+      return ipaddr.IPv4.parseCIDR(string);
+    } catch (_error) {
+      e = _error;
+      throw new Error(&#x22;ipaddr: the address has neither IPv6 nor IPv4 CIDR format&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+address together with a CIDR range.
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:db8:1234::1&#x22;);
+
+addr.match(ipaddr.<span class="apidocCodeKeywordSpan">parseCIDR</span>(&#x22;2001:db8::/32&#x22;)); // =&#x3e; true
+```
+
+A `range()` method returns one of predefined names for several special ranges defined
+by IP protocols. The exact names (and their respective CIDR ranges) can be looked up
+in the source: [IPv6 ranges] and [IPv4 ranges]. Some common ones include `&#x22;unicast&#x22;`
+(the default one) and `&#x22;reserved&#x22;`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.process" id="apidoc.element.ipaddr.js.process">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>process
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">process = function (string) {
+  var addr;
+  addr = this.parse(string);
+  if (addr.kind() === &#x27;ipv6&#x27; &#x26;&#x26; addr.isIPv4MappedAddress()) {
+    return addr.toIPv4Address();
+  } else {
+    return addr;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.subnetMatch" id="apidoc.element.ipaddr.js.subnetMatch">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>subnetMatch
+        <span class="apidocSignatureSpan">(address, rangeList, defaultName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subnetMatch = function (address, rangeList, defaultName) {
+  var rangeName, rangeSubnets, subnet, _i, _len;
+  if (defaultName == null) {
+    defaultName = &#x27;unicast&#x27;;
+  }
+  for (rangeName in rangeList) {
+    rangeSubnets = rangeList[rangeName];
+    if (rangeSubnets[0] &#x26;&#x26; !(rangeSubnets[0] instanceof Array)) {
+      rangeSubnets = [rangeSubnets];
+    }
+    for (_i = 0, _len = rangeSubnets.length; _i &#x3c; _len; _i++) {
+      subnet = rangeSubnets[_i];
+      if (address.match.apply(address, subnet)) {
+        return rangeName;
+      }
+    }
+  }
+  return defaultName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+A `range()` method returns one of predefined names for several special ranges defined
+by IP protocols. The exact names (and their respective CIDR ranges) can be looked up
+in the source: [IPv6 ranges] and [IPv4 ranges]. Some common ones include `&#x22;unicast&#x22;`
+(the default one) and `&#x22;reserved&#x22;`.
+
+You can match against your own range list by using
+`ipaddr.<span class="apidocCodeKeywordSpan">subnetMatch</span>(address, rangeList, defaultName)` method. It can work with both
+IPv6 and IPv4 addresses, and accepts a name-to-subnet map as the range list. For example:
+
+```js
+var rangeList = {
+documentationOnly: [ ipaddr.parse(&#x27;2001:db8::&#x27;), 32 ],
+tunnelProviders: [
+  [ ipaddr.parse(&#x27;2001:470::&#x27;), 32 ], // he.net
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipaddr.js.IPv4" id="apidoc.module.ipaddr.js.IPv4">module ipaddr.js.IPv4</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.IPv4" id="apidoc.element.ipaddr.js.IPv4.IPv4">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv4
+        <span class="apidocSignatureSpan">(octets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv4(octets) {
+  var octet, _i, _len;
+  if (octets.length !== 4) {
+    throw new Error(&#x22;ipaddr: ipv4 octet count should be 4&#x22;);
+  }
+  for (_i = 0, _len = octets.length; _i &#x3c; _len; _i++) {
+    octet = octets[_i];
+    if (!((0 &#x3c;= octet &#x26;&#x26; octet &#x3c;= 255))) {
+      throw new Error(&#x22;ipaddr: ipv4 octet should fit in 8 bits&#x22;);
+    }
+  }
+  this.octets = octets;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  IPv6.prototype.toIPv4Address = function() {
+    var high, low, _ref;
+    if (!this.isIPv4MappedAddress()) {
+      throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+    }
+    _ref = this.parts.slice(-2), high = _ref[0], low = _ref[1];
+    return new ipaddr.<span class="apidocCodeKeywordSpan">IPv4</span>([high &#x3e;&#x3e; 8, high &#x26; 0xff, low &#x3e;&#x3e; 8
+, low &#x26; 0xff]);
+  };
+
+  return IPv6;
+
+})();
+
+ipv6Part = &#x22;(?:[0-9a-f]+::?)+&#x22;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.isIPv4" id="apidoc.element.ipaddr.js.IPv4.isIPv4">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>isIPv4
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isIPv4 = function (string) {
+  return this.parser(string) !== null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.isValid" id="apidoc.element.ipaddr.js.IPv4.isValid">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>isValid
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValid = function (string) {
+  var e;
+  try {
+    new this(this.parser(string));
+    return true;
+  } catch (_error) {
+    e = _error;
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var bytes = ipaddr.parse(&#x27;2a00:1450:8007::68&#x27;).toByteArray(); // ipv6.google.com
+bytes // =&#x3e; [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, &#x3c;zeroes...&#x3e;, 0x00, 0x68 ]
+```
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.<span class="apidocCodeKeywordSpan">isValid</span>(string)` can be used to check if the string is a valid address
+for particular protocol, and `ipaddr.IPvX.parse(string)` is the error-throwing parser.
+
+`ipaddr.IPvX.isValid(string)` uses the same format for parsing as the POSIX `inet_ntoa` function, which accepts unusual formats
+like `0xc0.168.1.1` or `0x10000000`. The function `ipaddr.IPv4.isValidFourPartDecimal(string)` validates the IPv4 address and also
+ ensures that it is written in four-part decimal format.
+
+[IPv6 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L186
+[IPv4 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L71
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.isValidFourPartDecimal" id="apidoc.element.ipaddr.js.IPv4.isValidFourPartDecimal">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>isValidFourPartDecimal
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValidFourPartDecimal = function (string) {
+  if (ipaddr.IPv4.isValid(string) &#x26;&#x26; string.match(/^\d+(\.\d+){3}$/)) {
+    return true;
+  } else {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.isValid(string)` can be used to check if the string is a valid address
+for particular protocol, and `ipaddr.IPvX.parse(string)` is the error-throwing parser.
+
+`ipaddr.IPvX.isValid(string)` uses the same format for parsing as the POSIX `inet_ntoa` function, which accepts unusual formats
+like `0xc0.168.1.1` or `0x10000000`. The function `ipaddr.IPv4.<span class="apidocCodeKeywordSpan">isValidFourPartDecimal</span>(
+string)` validates the IPv4 address and also ensures that it is written in four-part decimal format.
+
+[IPv6 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L186
+[IPv4 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L71
+
+#### IPv6 properties
+
+Sometimes you will want to convert IPv6 not to a compact string representation (with
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.parse" id="apidoc.element.ipaddr.js.IPv4.parse">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>parse
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string) {
+  var parts;
+  parts = this.parser(string);
+  if (parts === null) {
+    throw new Error(&#x22;ipaddr: string is not formatted like ip address&#x22;);
+  }
+  return new this(parts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A `match(range, bits)` method can be used to check if the address falls into a
+certain CIDR range.
+Note that an address can be (obviously) matched only against an address of the same type.
+
+For example:
+
+```js
+var addr = ipaddr.<span class="apidocCodeKeywordSpan">parse</span>(&#x22;2001:db8:1234::1&#x22;);
+var range = ipaddr.parse(&#x22;2001:db8::&#x22;);
+
+addr.match(range, 32); // =&#x3e; true
+```
+
+Alternatively, `match` can also be called as `match([range, bits])`. In this way,
+it can be used together with the `parseCIDR(string)` method, which parses an IP
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.parseCIDR" id="apidoc.element.ipaddr.js.IPv4.parseCIDR">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>parseCIDR
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseCIDR = function (string) {
+  var maskLength, match;
+  if (match = string.match(/^(.+)\/(\d+)$/)) {
+    maskLength = parseInt(match[2]);
+    if (maskLength &#x3e;= 0 &#x26;&#x26; maskLength &#x3c;= 32) {
+      return [this.parse(match[1]), maskLength];
+    }
+  }
+  throw new Error(&#x22;ipaddr: string is not formatted like an IPv4 CIDR range&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+address together with a CIDR range.
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:db8:1234::1&#x22;);
+
+addr.match(ipaddr.<span class="apidocCodeKeywordSpan">parseCIDR</span>(&#x22;2001:db8::/32&#x22;)); // =&#x3e; true
+```
+
+A `range()` method returns one of predefined names for several special ranges defined
+by IP protocols. The exact names (and their respective CIDR ranges) can be looked up
+in the source: [IPv6 ranges] and [IPv4 ranges]. Some common ones include `&#x22;unicast&#x22;`
+(the default one) and `&#x22;reserved&#x22;`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.parser" id="apidoc.element.ipaddr.js.IPv4.parser">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.</span>parser
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parser = function (string) {
+  var match, parseIntAuto, part, shift, value;
+  parseIntAuto = function(string) {
+    if (string[0] === &#x22;0&#x22; &#x26;&#x26; string[1] !== &#x22;x&#x22;) {
+      return parseInt(string, 8);
+    } else {
+      return parseInt(string);
+    }
+  };
+  if (match = string.match(ipv4Regexes.fourOctet)) {
+    return (function() {
+      var _i, _len, _ref, _results;
+      _ref = match.slice(1, 6);
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i &#x3c; _len; _i++) {
+        part = _ref[_i];
+        _results.push(parseIntAuto(part));
+      }
+      return _results;
+    })();
+  } else if (match = string.match(ipv4Regexes.longValue)) {
+    value = parseIntAuto(match[1]);
+    if (value &#x3e; 0xffffffff || value &#x3c; 0) {
+      throw new Error(&#x22;ipaddr: address outside defined range&#x22;);
+    }
+    return ((function() {
+      var _i, _results;
+      _results = [];
+      for (shift = _i = 0; _i &#x3c;= 24; shift = _i += 8) {
+        _results.push((value &#x3e;&#x3e; shift) &#x26; 0xff);
+      }
+      return _results;
+    })()).reverse();
+  } else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return parts;
+    }
+  }
+  return null;
+};
+
+ipaddr.IPv4.isIPv4 = ipaddr.IPv6.isIPv6 = function(string) {
+  return this.<span class="apidocCodeKeywordSpan">parser</span>(string) !== null;
+};
+
+ipaddr.IPv4.isValid = function(string) {
+  var e;
+  try {
+    new this(this.parser(string));
+    return true;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipaddr.js.IPv4.prototype" id="apidoc.module.ipaddr.js.IPv4.prototype">module ipaddr.js.IPv4.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.kind" id="apidoc.element.ipaddr.js.IPv4.prototype.kind">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>kind
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kind = function () {
+  return &#x27;ipv4&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Object representation
+
+Parsing methods return an object which descends from `ipaddr.IPv6` or
+`ipaddr.IPv4`. These objects share some properties, but most of them differ.
+
+#### Shared properties
+
+One can determine the type of address by calling `addr.<span class="apidocCodeKeywordSpan">kind</span>()`. It will return
+either `&#x22;ipv6&#x22;` or `&#x22;ipv4&#x22;`.
+
+An address can be converted back to its string representation with `addr.toString()`.
+Note that this method:
+* does not return the original string used to create the object (in fact, there is
+  no way of getting that string)
+* returns a compact representation (when it is applicable)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.match" id="apidoc.element.ipaddr.js.IPv4.prototype.match">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>match
+        <span class="apidocSignatureSpan">(other, cidrRange)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">match = function (other, cidrRange) {
+  var _ref;
+  if (cidrRange === void 0) {
+    _ref = other, other = _ref[0], cidrRange = _ref[1];
+  }
+  if (other.kind() !== &#x27;ipv4&#x27;) {
+    throw new Error(&#x22;ipaddr: cannot match ipv4 address with non-ipv4 one&#x22;);
+  }
+  return matchCIDR(this.octets, other.octets, 8, cidrRange);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:db8:1234::1&#x22;);
+var range = ipaddr.parse(&#x22;2001:db8::&#x22;);
+
+addr.<span class="apidocCodeKeywordSpan">match</span>(range, 32); // =&#x3e; true
+```
+
+Alternatively, `match` can also be called as `match([range, bits])`. In this way,
+it can be used together with the `parseCIDR(string)` method, which parses an IP
+address together with a CIDR range.
+
+For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.prefixLengthFromSubnetMask" id="apidoc.element.ipaddr.js.IPv4.prototype.prefixLengthFromSubnetMask">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>prefixLengthFromSubnetMask
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prefixLengthFromSubnetMask = function () {
+  var cidr, i, octet, stop, zeros, zerotable, _i;
+  zerotable = {
+    0: 8,
+    128: 7,
+    192: 6,
+    224: 5,
+    240: 4,
+    248: 3,
+    252: 2,
+    254: 1,
+    255: 0
+  };
+  cidr = 0;
+  stop = false;
+  for (i = _i = 3; _i &#x3e;= 0; i = _i += -1) {
+    octet = this.octets[i];
+    if (octet in zerotable) {
+      zeros = zerotable[octet];
+      if (stop &#x26;&#x26; zeros !== 0) {
+        return null;
+      }
+      if (zeros !== 8) {
+        stop = true;
+      }
+      cidr += zeros;
+    } else {
+      return null;
+    }
+  }
+  return 32 - cidr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+addr.octets // =&#x3e; [192, 168, 1, 1]
+```
+
+`prefixLengthFromSubnetMask()` will return a CIDR prefix length for a valid IPv4 netmask or
+false if the netmask is not valid.
+
+```js
+ipaddr.IPv4.parse(&#x27;255.255.255.240&#x27;).<span class="apidocCodeKeywordSpan">prefixLengthFromSubnetMask</span>() == 28
+ipaddr.IPv4.parse(&#x27;255.192.164.0&#x27;).prefixLengthFromSubnetMask()  == null
+```
+
+#### Conversion
+
+IPv4 and IPv6 can be converted bidirectionally to and from network byte order (MSB) byte arrays.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.range" id="apidoc.element.ipaddr.js.IPv4.prototype.range">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>range
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">range = function () {
+  return ipaddr.subnetMatch(this, this.SpecialRanges);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+IPv6.prototype.range = function() {
+  return ipaddr.subnetMatch(this, this.SpecialRanges);
+};
+
+IPv6.prototype.isIPv4MappedAddress = function() {
+  return this.<span class="apidocCodeKeywordSpan">range</span>() === &#x27;ipv4Mapped&#x27;;
+};
+
+IPv6.prototype.toIPv4Address = function() {
+  var high, low, _ref;
+  if (!this.isIPv4MappedAddress()) {
+    throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.toByteArray" id="apidoc.element.ipaddr.js.IPv4.prototype.toByteArray">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>toByteArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toByteArray = function () {
+  return this.octets.slice(0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+The addresses can be converted to their byte representation with `toByteArray()`.
+(Actually, JavaScript mostly does not know about byte buffers. They are emulated with
+arrays of numbers, each in range of 0..255.)
+
+```js
+var bytes = ipaddr.parse(&#x27;2a00:1450:8007::68&#x27;).<span class="apidocCodeKeywordSpan">toByteArray</span>(); // ipv6.google
+.com
+bytes // =&#x3e; [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, &#x3c;zeroes...&#x3e;, 0x00, 0x68 ]
+```
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.isValid(string)` can be used to check if the string is a valid address
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.toIPv4MappedAddress" id="apidoc.element.ipaddr.js.IPv4.prototype.toIPv4MappedAddress">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>toIPv4MappedAddress
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toIPv4MappedAddress = function () {
+  return ipaddr.IPv6.parse(&#x22;::ffff:&#x22; + (this.toString()));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv4.prototype.toString" id="apidoc.element.ipaddr.js.IPv4.prototype.toString">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv4.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this.octets.join(&#x22;.&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`ipaddr.IPv4`. These objects share some properties, but most of them differ.
+
+#### Shared properties
+
+One can determine the type of address by calling `addr.kind()`. It will return
+either `&#x22;ipv6&#x22;` or `&#x22;ipv4&#x22;`.
+
+An address can be converted back to its string representation with `addr.<span class="apidocCodeKeywordSpan">toString</span>()`.
+Note that this method:
+ * does not return the original string used to create the object (in fact, there is
+   no way of getting that string)
+ * returns a compact representation (when it is applicable)
+
+A `match(range, bits)` method can be used to check if the address falls into a
+certain CIDR range.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipaddr.js.IPv6" id="apidoc.module.ipaddr.js.IPv6">module ipaddr.js.IPv6</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.IPv6" id="apidoc.element.ipaddr.js.IPv6.IPv6">
+        function <span class="apidocSignatureSpan">ipaddr.js.</span>IPv6
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv6(parts) {
+  var i, part, _i, _j, _len, _ref;
+  if (parts.length === 16) {
+    this.parts = [];
+    for (i = _i = 0; _i &#x3c;= 14; i = _i += 2) {
+      this.parts.push((parts[i] &#x3c;&#x3c; 8) | parts[i + 1]);
+    }
+  } else if (parts.length === 8) {
+    this.parts = parts;
+  } else {
+    throw new Error(&#x22;ipaddr: ipv6 part count should be 8 or 16&#x22;);
+  }
+  _ref = this.parts;
+  for (_j = 0, _len = _ref.length; _j &#x3c; _len; _j++) {
+    part = _ref[_j];
+    if (!((0 &#x3c;= part &#x26;&#x26; part &#x3c;= 0xffff))) {
+      throw new Error(&#x22;ipaddr: ipv6 part should fit in 16 bits&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ipaddr.fromByteArray = function(bytes) {
+  var length;
+  length = bytes.length;
+  if (length === 4) {
+    return new ipaddr.IPv4(bytes);
+  } else if (length === 16) {
+    return new ipaddr.<span class="apidocCodeKeywordSpan">IPv6</span>(bytes);
+  } else {
+    throw new Error(&#x22;ipaddr: the binary input is neither an IPv6 nor IPv4 address&#x22;);
+  }
+};
+
+ipaddr.process = function(string) {
+  var addr;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.isIPv6" id="apidoc.element.ipaddr.js.IPv6.isIPv6">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>isIPv6
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isIPv6 = function (string) {
+  return this.parser(string) !== null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.isValid" id="apidoc.element.ipaddr.js.IPv6.isValid">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>isValid
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValid = function (string) {
+  var e;
+  if (typeof string === &#x22;string&#x22; &#x26;&#x26; string.indexOf(&#x22;:&#x22;) === -1) {
+    return false;
+  }
+  try {
+    new this(this.parser(string));
+    return true;
+  } catch (_error) {
+    e = _error;
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var bytes = ipaddr.parse(&#x27;2a00:1450:8007::68&#x27;).toByteArray(); // ipv6.google.com
+bytes // =&#x3e; [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, &#x3c;zeroes...&#x3e;, 0x00, 0x68 ]
+```
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.<span class="apidocCodeKeywordSpan">isValid</span>(string)` can be used to check if the string is a valid address
+for particular protocol, and `ipaddr.IPvX.parse(string)` is the error-throwing parser.
+
+`ipaddr.IPvX.isValid(string)` uses the same format for parsing as the POSIX `inet_ntoa` function, which accepts unusual formats
+like `0xc0.168.1.1` or `0x10000000`. The function `ipaddr.IPv4.isValidFourPartDecimal(string)` validates the IPv4 address and also
+ ensures that it is written in four-part decimal format.
+
+[IPv6 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L186
+[IPv4 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L71
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.parse" id="apidoc.element.ipaddr.js.IPv6.parse">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>parse
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string) {
+  var parts;
+  parts = this.parser(string);
+  if (parts === null) {
+    throw new Error(&#x22;ipaddr: string is not formatted like ip address&#x22;);
+  }
+  return new this(parts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A `match(range, bits)` method can be used to check if the address falls into a
+certain CIDR range.
+Note that an address can be (obviously) matched only against an address of the same type.
+
+For example:
+
+```js
+var addr = ipaddr.<span class="apidocCodeKeywordSpan">parse</span>(&#x22;2001:db8:1234::1&#x22;);
+var range = ipaddr.parse(&#x22;2001:db8::&#x22;);
+
+addr.match(range, 32); // =&#x3e; true
+```
+
+Alternatively, `match` can also be called as `match([range, bits])`. In this way,
+it can be used together with the `parseCIDR(string)` method, which parses an IP
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.parseCIDR" id="apidoc.element.ipaddr.js.IPv6.parseCIDR">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>parseCIDR
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseCIDR = function (string) {
+  var maskLength, match;
+  if (match = string.match(/^(.+)\/(\d+)$/)) {
+    maskLength = parseInt(match[2]);
+    if (maskLength &#x3e;= 0 &#x26;&#x26; maskLength &#x3c;= 128) {
+      return [this.parse(match[1]), maskLength];
+    }
+  }
+  throw new Error(&#x22;ipaddr: string is not formatted like an IPv6 CIDR range&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+address together with a CIDR range.
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:db8:1234::1&#x22;);
+
+addr.match(ipaddr.<span class="apidocCodeKeywordSpan">parseCIDR</span>(&#x22;2001:db8::/32&#x22;)); // =&#x3e; true
+```
+
+A `range()` method returns one of predefined names for several special ranges defined
+by IP protocols. The exact names (and their respective CIDR ranges) can be looked up
+in the source: [IPv6 ranges] and [IPv4 ranges]. Some common ones include `&#x22;unicast&#x22;`
+(the default one) and `&#x22;reserved&#x22;`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.parser" id="apidoc.element.ipaddr.js.IPv6.parser">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.</span>parser
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parser = function (string) {
+  var match, octet, octets, parts, _i, _len;
+  if (string.match(ipv6Regexes[&#x27;native&#x27;])) {
+    return expandIPv6(string, 8);
+  } else if (match = string.match(ipv6Regexes[&#x27;transitional&#x27;])) {
+    parts = expandIPv6(match[1].slice(0, -1), 6);
+    if (parts) {
+      octets = [parseInt(match[2]), parseInt(match[3]), parseInt(match[4]), parseInt(match[5])];
+      for (_i = 0, _len = octets.length; _i &#x3c; _len; _i++) {
+        octet = octets[_i];
+        if (!((0 &#x3c;= octet &#x26;&#x26; octet &#x3c;= 255))) {
+          return null;
+        }
+      }
+      parts.push(octets[0] &#x3c;&#x3c; 8 | octets[1]);
+      parts.push(octets[2] &#x3c;&#x3c; 8 | octets[3]);
+      return parts;
+    }
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return parts;
+    }
+  }
+  return null;
+};
+
+ipaddr.IPv4.isIPv4 = ipaddr.IPv6.isIPv6 = function(string) {
+  return this.<span class="apidocCodeKeywordSpan">parser</span>(string) !== null;
+};
+
+ipaddr.IPv4.isValid = function(string) {
+  var e;
+  try {
+    new this(this.parser(string));
+    return true;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipaddr.js.IPv6.prototype" id="apidoc.module.ipaddr.js.IPv6.prototype">module ipaddr.js.IPv6.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.isIPv4MappedAddress" id="apidoc.element.ipaddr.js.IPv6.prototype.isIPv4MappedAddress">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>isIPv4MappedAddress
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isIPv4MappedAddress = function () {
+  return this.range() === &#x27;ipv4Mapped&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+IPv6.prototype.isIPv4MappedAddress = function() {
+  return this.range() === &#x27;ipv4Mapped&#x27;;
+};
+
+IPv6.prototype.toIPv4Address = function() {
+  var high, low, _ref;
+  if (!this.<span class="apidocCodeKeywordSpan">isIPv4MappedAddress</span>()) {
+    throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+  }
+  _ref = this.parts.slice(-2), high = _ref[0], low = _ref[1];
+  return new ipaddr.IPv4([high &#x3e;&#x3e; 8, high &#x26; 0xff, low &#x3e;&#x3e; 8, low &#x26; 0xff]);
+};
+
+return IPv6;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.kind" id="apidoc.element.ipaddr.js.IPv6.prototype.kind">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>kind
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kind = function () {
+  return &#x27;ipv6&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Object representation
+
+Parsing methods return an object which descends from `ipaddr.IPv6` or
+`ipaddr.IPv4`. These objects share some properties, but most of them differ.
+
+#### Shared properties
+
+One can determine the type of address by calling `addr.<span class="apidocCodeKeywordSpan">kind</span>()`. It will return
+either `&#x22;ipv6&#x22;` or `&#x22;ipv4&#x22;`.
+
+An address can be converted back to its string representation with `addr.toString()`.
+Note that this method:
+* does not return the original string used to create the object (in fact, there is
+  no way of getting that string)
+* returns a compact representation (when it is applicable)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.match" id="apidoc.element.ipaddr.js.IPv6.prototype.match">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>match
+        <span class="apidocSignatureSpan">(other, cidrRange)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">match = function (other, cidrRange) {
+  var _ref;
+  if (cidrRange === void 0) {
+    _ref = other, other = _ref[0], cidrRange = _ref[1];
+  }
+  if (other.kind() !== &#x27;ipv6&#x27;) {
+    throw new Error(&#x22;ipaddr: cannot match ipv6 address with non-ipv6 one&#x22;);
+  }
+  return matchCIDR(this.parts, other.parts, 16, cidrRange);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:db8:1234::1&#x22;);
+var range = ipaddr.parse(&#x22;2001:db8::&#x22;);
+
+addr.<span class="apidocCodeKeywordSpan">match</span>(range, 32); // =&#x3e; true
+```
+
+Alternatively, `match` can also be called as `match([range, bits])`. In this way,
+it can be used together with the `parseCIDR(string)` method, which parses an IP
+address together with a CIDR range.
+
+For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.range" id="apidoc.element.ipaddr.js.IPv6.prototype.range">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>range
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">range = function () {
+  return ipaddr.subnetMatch(this, this.SpecialRanges);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+IPv6.prototype.range = function() {
+  return ipaddr.subnetMatch(this, this.SpecialRanges);
+};
+
+IPv6.prototype.isIPv4MappedAddress = function() {
+  return this.<span class="apidocCodeKeywordSpan">range</span>() === &#x27;ipv4Mapped&#x27;;
+};
+
+IPv6.prototype.toIPv4Address = function() {
+  var high, low, _ref;
+  if (!this.isIPv4MappedAddress()) {
+    throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.toByteArray" id="apidoc.element.ipaddr.js.IPv6.prototype.toByteArray">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toByteArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toByteArray = function () {
+  var bytes, part, _i, _len, _ref;
+  bytes = [];
+  _ref = this.parts;
+  for (_i = 0, _len = _ref.length; _i &#x3c; _len; _i++) {
+    part = _ref[_i];
+    bytes.push(part &#x3e;&#x3e; 8);
+    bytes.push(part &#x26; 0xff);
+  }
+  return bytes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+The addresses can be converted to their byte representation with `toByteArray()`.
+(Actually, JavaScript mostly does not know about byte buffers. They are emulated with
+arrays of numbers, each in range of 0..255.)
+
+```js
+var bytes = ipaddr.parse(&#x27;2a00:1450:8007::68&#x27;).<span class="apidocCodeKeywordSpan">toByteArray</span>(); // ipv6.google
+.com
+bytes // =&#x3e; [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, &#x3c;zeroes...&#x3e;, 0x00, 0x68 ]
+```
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.isValid(string)` can be used to check if the string is a valid address
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.toIPv4Address" id="apidoc.element.ipaddr.js.IPv6.prototype.toIPv4Address">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toIPv4Address
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toIPv4Address = function () {
+  var high, low, _ref;
+  if (!this.isIPv4MappedAddress()) {
+    throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+  }
+  _ref = this.parts.slice(-2), high = _ref[0], low = _ref[1];
+  return new ipaddr.IPv4([high &#x3e;&#x3e; 8, high &#x26; 0xff, low &#x3e;&#x3e; 8, low &#x26; 0xff]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  };
+
+  ipaddr.process = function(string) {
+    var addr;
+    addr = this.parse(string);
+    if (addr.kind() === &#x27;ipv6&#x27; &#x26;&#x26; addr.isIPv4MappedAddress()) {
+      return addr.<span class="apidocCodeKeywordSpan">toIPv4Address</span>();
+    } else {
+      return addr;
+    }
+  };
+
+}).call(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.toNormalizedString" id="apidoc.element.ipaddr.js.IPv6.prototype.toNormalizedString">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toNormalizedString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toNormalizedString = function () {
+  var part;
+  return ((function() {
+    var _i, _len, _ref, _results;
+    _ref = this.parts;
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i &#x3c; _len; _i++) {
+      part = _ref[_i];
+      _results.push(part.toString(16));
+    }
+    return _results;
+  }).call(this)).join(&#x22;:&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+all zeroes are explicit.
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:0db8::0001&#x22;);
+addr.toString(); // =&#x3e; &#x22;2001:db8::1&#x22;
+addr.<span class="apidocCodeKeywordSpan">toNormalizedString</span>(); // =&#x3e; &#x22;2001:db8:0:0:0:0:0:1&#x22;
+```
+
+The `isIPv4MappedAddress()` method will return `true` if this address is an IPv4-mapped
+one, and `toIPv4Address()` will return an IPv4 object address.
+
+To access the underlying binary representation of the address, use `addr.parts`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.IPv6.prototype.toString" id="apidoc.element.ipaddr.js.IPv6.prototype.toString">
+        function <span class="apidocSignatureSpan">ipaddr.js.IPv6.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  var compactStringParts, part, pushPart, state, stringParts, _i, _len;
+  stringParts = (function() {
+    var _i, _len, _ref, _results;
+    _ref = this.parts;
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i &#x3c; _len; _i++) {
+      part = _ref[_i];
+      _results.push(part.toString(16));
+    }
+    return _results;
+  }).call(this);
+  compactStringParts = [];
+  pushPart = function(part) {
+    return compactStringParts.push(part);
+  };
+  state = 0;
+  for (_i = 0, _len = stringParts.length; _i &#x3c; _len; _i++) {
+    part = stringParts[_i];
+    switch (state) {
+      case 0:
+        if (part === &#x27;0&#x27;) {
+          pushPart(&#x27;&#x27;);
+        } else {
+          pushPart(part);
+        }
+        state = 1;
+        break;
+      case 1:
+        if (part === &#x27;0&#x27;) {
+          state = 2;
+        } else {
+          pushPart(part);
+        }
+        break;
+      case 2:
+        if (part !== &#x27;0&#x27;) {
+          pushPart(&#x27;&#x27;);
+          pushPart(part);
+          state = 3;
+        }
+        break;
+      case 3:
+        pushPart(part);
+    }
+  }
+  if (state === 2) {
+    pushPart(&#x27;&#x27;);
+    pushPart(&#x27;&#x27;);
+  }
+  return compactStringParts.join(&#x22;:&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`ipaddr.IPv4`. These objects share some properties, but most of them differ.
+
+#### Shared properties
+
+One can determine the type of address by calling `addr.kind()`. It will return
+either `&#x22;ipv6&#x22;` or `&#x22;ipv4&#x22;`.
+
+An address can be converted back to its string representation with `addr.<span class="apidocCodeKeywordSpan">toString</span>()`.
+Note that this method:
+ * does not return the original string used to create the object (in fact, there is
+   no way of getting that string)
+ * returns a compact representation (when it is applicable)
+
+A `match(range, bits)` method can be used to check if the address falls into a
+certain CIDR range.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipaddr.js.ipaddr" id="apidoc.module.ipaddr.js.ipaddr">module ipaddr.js.ipaddr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.IPv4" id="apidoc.element.ipaddr.js.ipaddr.IPv4">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>IPv4
+        <span class="apidocSignatureSpan">(octets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv4(octets) {
+  var octet, _i, _len;
+  if (octets.length !== 4) {
+    throw new Error(&#x22;ipaddr: ipv4 octet count should be 4&#x22;);
+  }
+  for (_i = 0, _len = octets.length; _i &#x3c; _len; _i++) {
+    octet = octets[_i];
+    if (!((0 &#x3c;= octet &#x26;&#x26; octet &#x3c;= 255))) {
+      throw new Error(&#x22;ipaddr: ipv4 octet should fit in 8 bits&#x22;);
+    }
+  }
+  this.octets = octets;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  IPv6.prototype.toIPv4Address = function() {
+    var high, low, _ref;
+    if (!this.isIPv4MappedAddress()) {
+      throw new Error(&#x22;ipaddr: trying to convert a generic ipv6 address to ipv4&#x22;);
+    }
+    _ref = this.parts.slice(-2), high = _ref[0], low = _ref[1];
+    return new ipaddr.<span class="apidocCodeKeywordSpan">IPv4</span>([high &#x3e;&#x3e; 8, high &#x26; 0xff, low &#x3e;&#x3e; 8
+, low &#x26; 0xff]);
+  };
+
+  return IPv6;
+
+})();
+
+ipv6Part = &#x22;(?:[0-9a-f]+::?)+&#x22;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.IPv6" id="apidoc.element.ipaddr.js.ipaddr.IPv6">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>IPv6
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IPv6(parts) {
+  var i, part, _i, _j, _len, _ref;
+  if (parts.length === 16) {
+    this.parts = [];
+    for (i = _i = 0; _i &#x3c;= 14; i = _i += 2) {
+      this.parts.push((parts[i] &#x3c;&#x3c; 8) | parts[i + 1]);
+    }
+  } else if (parts.length === 8) {
+    this.parts = parts;
+  } else {
+    throw new Error(&#x22;ipaddr: ipv6 part count should be 8 or 16&#x22;);
+  }
+  _ref = this.parts;
+  for (_j = 0, _len = _ref.length; _j &#x3c; _len; _j++) {
+    part = _ref[_j];
+    if (!((0 &#x3c;= part &#x26;&#x26; part &#x3c;= 0xffff))) {
+      throw new Error(&#x22;ipaddr: ipv6 part should fit in 16 bits&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ipaddr.fromByteArray = function(bytes) {
+  var length;
+  length = bytes.length;
+  if (length === 4) {
+    return new ipaddr.IPv4(bytes);
+  } else if (length === 16) {
+    return new ipaddr.<span class="apidocCodeKeywordSpan">IPv6</span>(bytes);
+  } else {
+    throw new Error(&#x22;ipaddr: the binary input is neither an IPv6 nor IPv4 address&#x22;);
+  }
+};
+
+ipaddr.process = function(string) {
+  var addr;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.fromByteArray" id="apidoc.element.ipaddr.js.ipaddr.fromByteArray">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>fromByteArray
+        <span class="apidocSignatureSpan">(bytes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromByteArray = function (bytes) {
+  var length;
+  length = bytes.length;
+  if (length === 4) {
+    return new ipaddr.IPv4(bytes);
+  } else if (length === 16) {
+    return new ipaddr.IPv6(bytes);
+  } else {
+    throw new Error(&#x22;ipaddr: the binary input is neither an IPv6 nor IPv4 address&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The `fromByteArray()` method will take an array and create an appropriate IPv4 or IPv6 object
+if the input satisfies the requirements. For IPv4 it has to be an array of four 8-bit values,
+while for IPv6 it has to be an array of sixteen 8-bit values.
+
+For example:
+```js
+var addr = ipaddr.<span class="apidocCodeKeywordSpan">fromByteArray</span>([0x7f, 0, 0, 1]);
+addr.toString(); // =&#x3e; &#x22;127.0.0.1&#x22;
+```
+
+or
+
+```js
+var addr = ipaddr.fromByteArray([0x20, 1, 0xd, 0xb8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.isValid" id="apidoc.element.ipaddr.js.ipaddr.isValid">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>isValid
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValid = function (string) {
+  return ipaddr.IPv6.isValid(string) || ipaddr.IPv4.isValid(string);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var bytes = ipaddr.parse(&#x27;2a00:1450:8007::68&#x27;).toByteArray(); // ipv6.google.com
+bytes // =&#x3e; [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, &#x3c;zeroes...&#x3e;, 0x00, 0x68 ]
+```
+
+The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
+have the same interface for both protocols, and are similar to global methods.
+
+`ipaddr.IPvX.<span class="apidocCodeKeywordSpan">isValid</span>(string)` can be used to check if the string is a valid address
+for particular protocol, and `ipaddr.IPvX.parse(string)` is the error-throwing parser.
+
+`ipaddr.IPvX.isValid(string)` uses the same format for parsing as the POSIX `inet_ntoa` function, which accepts unusual formats
+like `0xc0.168.1.1` or `0x10000000`. The function `ipaddr.IPv4.isValidFourPartDecimal(string)` validates the IPv4 address and also
+ ensures that it is written in four-part decimal format.
+
+[IPv6 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L186
+[IPv4 ranges]: https://github.com/whitequark/ipaddr.js/blob/master/src/ipaddr.coffee#L71
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.parse" id="apidoc.element.ipaddr.js.ipaddr.parse">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>parse
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string) {
+  if (ipaddr.IPv6.isValid(string)) {
+    return ipaddr.IPv6.parse(string);
+  } else if (ipaddr.IPv4.isValid(string)) {
+    return ipaddr.IPv4.parse(string);
+  } else {
+    throw new Error(&#x22;ipaddr: the address has neither IPv6 nor IPv4 format&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A `match(range, bits)` method can be used to check if the address falls into a
+certain CIDR range.
+Note that an address can be (obviously) matched only against an address of the same type.
+
+For example:
+
+```js
+var addr = ipaddr.<span class="apidocCodeKeywordSpan">parse</span>(&#x22;2001:db8:1234::1&#x22;);
+var range = ipaddr.parse(&#x22;2001:db8::&#x22;);
+
+addr.match(range, 32); // =&#x3e; true
+```
+
+Alternatively, `match` can also be called as `match([range, bits])`. In this way,
+it can be used together with the `parseCIDR(string)` method, which parses an IP
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.parseCIDR" id="apidoc.element.ipaddr.js.ipaddr.parseCIDR">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>parseCIDR
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseCIDR = function (string) {
+  var e;
+  try {
+    return ipaddr.IPv6.parseCIDR(string);
+  } catch (_error) {
+    e = _error;
+    try {
+      return ipaddr.IPv4.parseCIDR(string);
+    } catch (_error) {
+      e = _error;
+      throw new Error(&#x22;ipaddr: the address has neither IPv6 nor IPv4 CIDR format&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+address together with a CIDR range.
+
+For example:
+
+```js
+var addr = ipaddr.parse(&#x22;2001:db8:1234::1&#x22;);
+
+addr.match(ipaddr.<span class="apidocCodeKeywordSpan">parseCIDR</span>(&#x22;2001:db8::/32&#x22;)); // =&#x3e; true
+```
+
+A `range()` method returns one of predefined names for several special ranges defined
+by IP protocols. The exact names (and their respective CIDR ranges) can be looked up
+in the source: [IPv6 ranges] and [IPv4 ranges]. Some common ones include `&#x22;unicast&#x22;`
+(the default one) and `&#x22;reserved&#x22;`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.process" id="apidoc.element.ipaddr.js.ipaddr.process">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>process
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">process = function (string) {
+  var addr;
+  addr = this.parse(string);
+  if (addr.kind() === &#x27;ipv6&#x27; &#x26;&#x26; addr.isIPv4MappedAddress()) {
+    return addr.toIPv4Address();
+  } else {
+    return addr;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipaddr.js.ipaddr.subnetMatch" id="apidoc.element.ipaddr.js.ipaddr.subnetMatch">
+        function <span class="apidocSignatureSpan">ipaddr.js.ipaddr.</span>subnetMatch
+        <span class="apidocSignatureSpan">(address, rangeList, defaultName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subnetMatch = function (address, rangeList, defaultName) {
+  var rangeName, rangeSubnets, subnet, _i, _len;
+  if (defaultName == null) {
+    defaultName = &#x27;unicast&#x27;;
+  }
+  for (rangeName in rangeList) {
+    rangeSubnets = rangeList[rangeName];
+    if (rangeSubnets[0] &#x26;&#x26; !(rangeSubnets[0] instanceof Array)) {
+      rangeSubnets = [rangeSubnets];
+    }
+    for (_i = 0, _len = rangeSubnets.length; _i &#x3c; _len; _i++) {
+      subnet = rangeSubnets[_i];
+      if (address.match.apply(address, subnet)) {
+        return rangeName;
+      }
+    }
+  }
+  return defaultName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+A `range()` method returns one of predefined names for several special ranges defined
+by IP protocols. The exact names (and their respective CIDR ranges) can be looked up
+in the source: [IPv6 ranges] and [IPv4 ranges]. Some common ones include `&#x22;unicast&#x22;`
+(the default one) and `&#x22;reserved&#x22;`.
+
+You can match against your own range list by using
+`ipaddr.<span class="apidocCodeKeywordSpan">subnetMatch</span>(address, rangeList, defaultName)` method. It can work with both
+IPv6 and IPv4 addresses, and accepts a name-to-subnet map as the range list. For example:
+
+```js
+var rangeList = {
+documentationOnly: [ ipaddr.parse(&#x27;2001:db8::&#x27;), 32 ],
+tunnelProviders: [
+  [ ipaddr.parse(&#x27;2001:470::&#x27;), 32 ], // he.net
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
